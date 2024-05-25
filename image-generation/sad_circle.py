@@ -6,7 +6,8 @@ import math
 
 
 def main():
-    iterations_per_figure = 200
+    iterations_per_figure = 500
+    point_size = 2
     fig, ax = plt.subplots()
     circle = patches.Circle((0,0), radius=1, fill=False)
     ax.add_patch(circle)
@@ -18,25 +19,28 @@ def main():
     points = generate_points(iterations_per_figure)
     xs = [point[0] for point in points]
     ys = [point[1] for point in points]
+    ss = [point_size for _ in points]
     colors = ["blue" for _ in points]
 
-    plt.scatter(xs, ys, None, colors)
+    plt.scatter(xs, ys, ss, colors)
     plt.savefig("sad_circle_1.png")
 
     points.extend(generate_points(iterations_per_figure))
     xs = [point[0] for point in points]
     ys = [point[1] for point in points]
+    ss = [point_size for _ in points]
     colors = ["blue" for _ in points]
 
-    plt.scatter(xs, ys, None, colors)
+    plt.scatter(xs, ys, ss, colors)
     plt.savefig("sad_circle_2.png")
 
     points.extend(generate_points(iterations_per_figure))
     xs = [point[0] for point in points]
     ys = [point[1] for point in points]
+    ss = [point_size for _ in points]
     colors = ["blue" for _ in points]
 
-    plt.scatter(xs, ys, None, colors)
+    plt.scatter(xs, ys, ss, colors)
     plt.savefig("sad_circle_3.png")
 
 def generate_points(num_points):
